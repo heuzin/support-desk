@@ -5,7 +5,6 @@ import { errorHandler } from "./middleware/errorMidldleware";
 import { connectDB } from "./config/db";
 import userRoutes from "./routes/userRoutes";
 import ticketRoutes from "./routes/ticketRoutes";
-const PORT = process.env.PORT || 5000;
 
 dotenv.config();
 
@@ -35,5 +34,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 app.use(errorHandler);
+
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
